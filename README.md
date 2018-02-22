@@ -4,7 +4,7 @@ Single nucleotide variant calling in NGS with deep learning
 deepSNV is a deep learning framework for calling SNVs in NGS data.  It can be run as either a model building and validation tool or used only to make predictions using the included pre-trained convoluted neural network or one of your choosing.  An example of building and training a CNN and making SNV predictions is as follows:
 
 ```
-python3 deepsnv.py --sample_num 10 \
+$ python3 deepsnv.py --sample_num 10 \
     --vcf_path my_vcf.vcf.gz \
     --genome_path my_refererence_genome.fa \
     --bam_path my_indexed_sorted_bam.sorted.bam \
@@ -25,7 +25,20 @@ $ bwa index hg38.fa
 ```--len_path```:  path to chromosome size tsv file (see hg19.sizes for example)
 ```--epochs```:  number of epochs to train model   
   
-Output from the above command is a trained convoluted neural netowork and confusion matrix for held out testing data.
+Output from the above command is a trained convoluted neural netowork and confusion matrix for held out testing data.  Alternatively, predictions can be made using a pre-trained model as follows:  
+
+```
+$ python3 predictCNN.py --genome_path bams/wg.fa \
+    --bam_path bams/SRR2480749.sorted.bam \
+    --preds_path bams/predict.csv \
+    --model_path ec2/deepSNV.h5
+
+```  
+
+Options are as follows:   
+```--bam_path```:  path to indexed, sorted bam file to analyze
+```--preds_path```:  path to a csv containing chromosome and coordinate information for positions to evalate for SNV.  See 
+```--epochs```:  number of epochs to train model   
 
 
 
