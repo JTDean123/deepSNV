@@ -7,7 +7,7 @@ deepSNV is a deep learning framework for calling SNVs in NGS data.  It can be ru
 $ python3 deepsnv.py --sample_num 10 \
     --vcf_path my_vcf.vcf.gz \
     --genome_path my_refererence_genome.fa \
-    --bam_path my_indexed_sorted_bam.sorted.bam \
+    --bam_path my_indexed_sorted_bam.bam \
     --len_path chromosome_sizes.txt \
     --epochs 50
 ```
@@ -29,16 +29,18 @@ Output from the above command is a trained convoluted neural netowork and confus
 
 ```
 $ python3 predictCNN.py --genome_path bams/wg.fa \
-    --bam_path bams/SRR2480749.sorted.bam \
-    --preds_path bams/predict.csv \
-    --model_path ec2/deepSNV.h5
+    --bam_path my_indexed_sorted_bam.bam \
+    --preds_path predict.csv \
+    --model_path deepSNV.h5
 
 ```  
 
 Options are as follows:   
 ```--bam_path```:  path to indexed, sorted bam file to analyze
-```--preds_path```:  path to a csv containing chromosome and coordinate information for positions to evalate for SNV.  See 
-```--epochs```:  number of epochs to train model   
+```--preds_path```:  path to a csv containing chromosome and coordinate information for positions to evalate for SNV.  (see predict.csv for example)  
+```--model_path```:  path to pre-trained keras CNN model   
+
+Output from the above command is a csv of input SNV candidate coordinates and a label of 1 (SNV) or 0 (non-SNV).
 
 
 
