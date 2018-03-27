@@ -52,7 +52,7 @@ Output from the above command is a csv of input SNV candidate coordinates and a 
 
 ## Requirements  
   
-python3(!), pandas, numpy, sklean, keras (tensorflow backend), pysam
+python3, pandas, numpy, sklean, keras (tensorflow backend), pysam
   
 ## Other  
   
