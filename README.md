@@ -26,9 +26,9 @@ $ gunzip hg38.fa.gz
 $ bwa index hg38.fa
 ```   
 
-```--bam_path```:  path to indexed, sorted bam file
-```--len_path```:  path to chromosome size tsv file (see hg19.sizes for example)
-```--epochs```:  number of epochs to train model   
+`--bam_path`:  path to indexed, sorted bam file  
+`--len_path`:  path to chromosome size tsv file (see hg19.sizes for example)  
+`--epochs`:  number of epochs to train model   
   
 Output from the above command is a trained convoluted neural netowork and confusion matrix for held out testing data.  Alternatively, predictions can be made using a pre-trained model as follows:  
 
