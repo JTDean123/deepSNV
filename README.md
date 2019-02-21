@@ -18,7 +18,6 @@ $ python3 deepsnv.py --sample_num 10 \
 The options are as follows:  
 `--vfc_path`:  path to vcf file containing known SNVs   
 `--sample_num`: number of SNVs for training, randomly selected from vcf  
-`--len_path`:  path to text file containing chromosome size info, see `chromosome_sizes.txt` for example  
 `--genome_path`:  path to indexed reference genome file. This can be created for hg38, for example, via:  
 
 ```
@@ -33,7 +32,7 @@ $ bwa index hg38.fa
   
 Output from the above command is a trained convoluted neural netowork and confusion matrix for held out testing data.  Alternatively, predictions can be made using a pre-trained model as follows:  
 
-```
+```chromosome_sizes.txt
 $ python3 predictCNN.py --genome_path bams/wg.fa \
     --bam_path my_indexed_sorted_bam.bam \
     --preds_path predict.csv \
