@@ -16,8 +16,10 @@ $ python3 deepsnv.py --sample_num 10 \
 ```
 
 The options are as follows:  
-```--vfc_path```:  path to vcf file containing known SNVs   
-```--genome_path```:  path to indexed reference genome file. This can be created for hg38, for example, via:
+`--vfc_path`:  path to vcf file containing known SNVs  
+`--sample_num`: number of SNVs for training  
+`--genome_path`:  path to indexed reference genome file. This can be created for hg38, for example, via:
+
 ```
 $ wget --timestamping 'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz' -O hg38.fa.gz  
 $ gunzip hg38.fa.gz   
