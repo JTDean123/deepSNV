@@ -18,7 +18,7 @@ import feature_extract
 import snvCNN
 
 
-def getData(sample_num, vcf_path, genome_path, bam_path, len_path):
+def get_data(sample_num, vcf_path, genome_path, bam_path, len_path):
     '''
     Convert indexed, sorted bam file and VCF into CNN compatible data and labels
 
@@ -90,7 +90,7 @@ def main():
 
     (options, args) = parser.parse_args()
 
-    X, y = getData(options.sample_num, options.vcf_path, options.genome_path, options.bam_path, options.len_path)
+    X, y = get_data(options.sample_num, options.vcf_path, options.genome_path, options.bam_path, options.len_path)
 
     # split into test train sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
