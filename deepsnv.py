@@ -81,7 +81,7 @@ def getData(sample_num, vcf_path, genome_path, bam_path, len_path):
 def main():
     # read user passed arguments
     parser = OptionParser()
-    parser.add_option("-n", "--sample_num", dest="sample_num", help="number of snps for training", default="10000", type='int')
+    parser.add_option("-n", "--sample_num", dest="sample_num", help="number of snps for training", default="100000", type='int')
     parser.add_option("-v", "--vcf_path", dest="vcf_path", help="path to vcf")
     parser.add_option("-g", "--genome_path", dest="genome_path", help="path to reference genome")
     parser.add_option("-b", "--bam_path", dest="bam_path", help="path to sorted, indexed bam file")
