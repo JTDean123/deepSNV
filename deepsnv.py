@@ -102,7 +102,7 @@ def main():
     predictions = snvCNN.test_cnn(trained_cnn, X_test)
 
     # generate confusion matrix
-    print('saving confusion matrix as deepSNV.confusion.csv')
+    sys.stderr.write('INFO: saving confusion matrix as deepSNV.confusion.csv\n')
     preds = pd.DataFrame(confusion_matrix(y_test, predictions))
     preds.columns = ['Predicted Non-SNV', 'Predicted SNV']
     preds.index = ['Actual Non-SNV', 'Actual SNV']
@@ -110,13 +110,13 @@ def main():
 
     # evaluate accuracy on test data
     acc = snvCNN.accuracy(y_test, predictions)
-    print('Accuracy on test data:  ', acc)
+    sys.stderr.write('INFO: Accuracy on test data:  {0}'.format(acc))
 
     # save the model
-    print('Saving model as deepSNV.h5')
+    sys.stderr.write('INFO: Saving model as deepSNV.h5\n')
     trained_cnn.save('deepSNV.h5')
 
-    print('Exiting')
+    sys.stderr.write('INFO:  Completed, exiting\n')
     sys.exit(0)
 
 
