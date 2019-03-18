@@ -80,11 +80,11 @@ def main():
 
     # generate feature matrix
     sample_type = 'prediction'
-    pred_matrix = feature_extract.bamMatrix(bam_path, genome_path, coordinates, sample_type)
+    pred_matrix = feature_extract.bam_matrix(bam_path, genome_path, coordinates, sample_type)
 
     # make predictions
     print('Making predictions....')
-    preds = snvCNN.testCNN(model, pred_matrix)
+    preds = snvCNN.test_cnn(model, pred_matrix)
 
     # write output
     writeOutput(preds, coordinates)
