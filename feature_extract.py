@@ -18,7 +18,7 @@ import random
 
 
 def vcf_to_pd(path):
-    '''
+    """
     Convert a VCF file to a pandas df
 
     Return a pandas df with cols [chrom, pos, ref, alts]
@@ -33,7 +33,7 @@ def vcf_to_pd(path):
     vcfs : pandas df
         vcfs is a dataframe with dimensions vcf_variant calls x 4
 
-    '''
+    """
     # function to randomly sample a vcf file
 
     vcfs = pd.DataFrame()
@@ -62,7 +62,7 @@ def vcf_to_pd(path):
 
 
 def bam_matrix(bam_path, ref_path, coords, sample_type):
-    '''
+    """
     Create a [coords.shape[0], 2, 5, 22] feature matrix
 
     Parameters
@@ -81,8 +81,7 @@ def bam_matrix(bam_path, ref_path, coords, sample_type):
     snps : numpy array
         a numpy array with dimensiuons [coords.shape[0], 2, 5, 22]
 
-    '''
-
+    """
 
     sys.stderr.write('INFO:  creating feature matrix for {0}\n'.format(sample_type))
     observations = coords.shape[0]
@@ -137,7 +136,7 @@ def bam_matrix(bam_path, ref_path, coords, sample_type):
 
 
 def get_genome(path):
-    '''
+    """
     Get the chromosome lengths for the reference genome
 
     TODO:  could extract this from the fai ref file
@@ -152,9 +151,8 @@ def get_genome(path):
     chrom ref : pandas df
         pandas data frame with dimensions
 
-    '''
+    """
     # get ref genome length
-
     chrom19 = []
     len19 = []
     try:
@@ -175,7 +173,7 @@ def get_genome(path):
 
 
 def random_refs(num_pick, chrom_len, pdvcf):
-    '''
+    """
     Pick random non-snv spots in the genome
 
     Returns a pandas df containing chrom and reference nt seq
@@ -194,7 +192,7 @@ def random_refs(num_pick, chrom_len, pdvcf):
     no_snp : pandas df
         pandas df with dimensions [num_pick, 2] and cols [chrom, no_snps]
 
-    '''
+    """
 
     # the following two blocks will generate a df with three columns: chrom, snv counts, and fraction
     # calculate the number of SNVs on each chromosome

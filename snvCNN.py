@@ -16,7 +16,7 @@ import sys
 
 
 def train_cnn(X_train, y_train, epochs):
-    '''
+    """
     Train a CNN using 2-channel ngs derived pileup data
 
     return a trained model
@@ -35,7 +35,7 @@ def train_cnn(X_train, y_train, epochs):
     model : h5
         keras (h5) hierarchical data format trained model
 
-    '''
+    """
     # reshape the data
     print('Training model with:', X_train.shape[0], 'training observations and ', epochs, 'epochs')
     X_train = X_train.reshape(X_train.shape[0], 5, 22, 2)
@@ -76,7 +76,7 @@ def train_cnn(X_train, y_train, epochs):
 
 
 def test_cnn(model, X_test):
-    '''
+    """
     Make predictions on test data
 
     Parameters
@@ -90,7 +90,7 @@ def test_cnn(model, X_test):
         a np array with dimensions [X_test.shape[0], 1]
         entries will either be 1 or 0
 
-    '''
+    """
     # evaluate the model on the test data
     sys.stderr.write('Evaluating model with: {0} test observations'.format(X_test.shape[0]))
     X_test = X_test.reshape(X_test.shape[0], 5, 22, 2)
@@ -100,7 +100,7 @@ def test_cnn(model, X_test):
 
 
 def accuracy(y_test, predict):
-    '''
+    """
     Calculate accuracy
 
     Parameters
@@ -115,7 +115,7 @@ def accuracy(y_test, predict):
     accuracy : float
         (number of correct predictions on test samples) / (number of test samples)
 
-    '''
+    """
     # calculate total accuracy
     right = 0
     for i, j in enumerate(predict):

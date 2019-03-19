@@ -19,7 +19,7 @@ import snvCNN
 
 
 def get_data(sample_num, vcf_path, genome_path, bam_path, len_path):
-    '''
+    """
     Convert indexed, sorted bam file and VCF into CNN compatible data and labels
 
     Returns a 2-channel pileup/ref numpy array and a binary label array
@@ -43,7 +43,7 @@ def get_data(sample_num, vcf_path, genome_path, bam_path, len_path):
     (X, y) : tuple
         X is a numpy array with dimensions [sample_num, 2, 5, 21]
         y is a numpy array of dimensions [sample_num * 2]
-    '''
+    """
 
     # convert the vcf to a pandas df
     snps = feature_extract.vcf_to_pd(vcf_path)
