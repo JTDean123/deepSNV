@@ -1,7 +1,7 @@
 # deepSNV
 Single nucleotide variant calling in NGS with deep learning
 
-deepSNV is a deep learning framework for calling SNVs in NGS data.  Technical details can be found in the deepSNV.pdf in this repository.  It can be run as either a model building and validation tool or used only to make predictions using the included pre-trained convoluted neural network or one of your choosing.  
+deepSNV is a deep learning framework for calling SNVs in NGS data.  Technical details can be found in the `deepSNV.pdf` in this repository.  It can be run as either a model building and validation tool or used only to make predictions using the included pre-trained convoluted neural network or one of your choosing.  
   
 ## Usage  
 An example of building and training a CNN and making SNV predictions is as follows:
